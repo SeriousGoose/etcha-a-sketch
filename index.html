@@ -32,7 +32,7 @@
 
 
     <script>
-        let number = 60
+        let number = 25
         let height = ((600 / number) - 2.67) + "px";
         console.log(height);
         let width = ((600 / number) - 2.67) + "px";
@@ -42,10 +42,18 @@
 
         let button = document.getElementById("button");
         button.addEventListener('click', function () {
+            document.querySelectorAll('.grid-item').forEach(e => e.remove());
             number = prompt("Please enter your desired workspace", "16")
+            height = ((600 / number) - 2.67) + "px";
+            console.log(height);
+            width = ((600 / number) - 2.67) + "px";
+            container.style = ("grid-template-columns: repeat(" + number + ", auto)");
             for (i = 0; i < (number * number); i++) {
+                console.log(number);
             createDiv();
         }
+            
+        
 
         })
 
