@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Etch-A-Sketch</title>
+    <style>
+        #grid-container {
+            height: 600px;
+            width: 600px;
+            border: 5px solid red;
+            display: grid;
+            grid-auto-rows: auto;
+            justify-content: center;
+            align-content: center;
+
+        }
+
+        .grid-item {
+
+            border: 5px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Etch-A-Sketch</h1>
+    <button id = "button">Adjust Size</button>
+    <div id="grid-container">
+
+    </div>
+
+
+
+    <script>
+        let number = 60
+        let height = ((600 / number) - 2.67) + "px";
+        console.log(height);
+        let width = ((600 / number) - 2.67) + "px";
+
+        let container = document.getElementById("grid-container");
+        container.style = ("grid-template-columns: repeat(" + number + ", auto)");
+
+        let button = document.getElementById("button");
+        button.addEventListener('click', function () {
+            number = prompt("Please enter your desired workspace", "16")
+            for (i = 0; i < (number * number); i++) {
+            createDiv();
+        }
+
+        })
+
+
+        function createDiv() {
+            let div = document.createElement('div')
+            div.class = 'grid-item';
+            div.style.border = "1px solid BLACK";
+            div.style.height = height;
+            div.style.width = width;
+            div.className = "grid-item";
+            div.addEventListener("mouseenter", function (event) {
+                event.target.style.backgroundColor = "black";
+            })
+            document.getElementById("grid-container").appendChild(div);
+        }
+
+
+
+        for (i = 0; i < (number * number); i++) {
+            createDiv();
+        }
+
+    </script>
+</body>
+
+</html>
