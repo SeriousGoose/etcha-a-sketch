@@ -4,6 +4,19 @@
 <head>
     <title>Etch-A-Sketch</title>
     <style>
+        #title {
+            display: flex;
+            justify-content: center;
+        }
+        #body{
+            display:flex;
+            justify-content: center;
+        }
+        #reset{
+            display:flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
         #grid-container {
             height: 600px;
             width: 600px;
@@ -16,17 +29,19 @@
         }
 
         .grid-item {
-
+            background-color: rgba(0, 0, 0, 0);
             border: 5px solid black;
         }
     </style>
 </head>
 
 <body>
-    <h1>Etch-A-Sketch</h1>
-    <button id = "button">Adjust Size</button>
-    <div id="grid-container">
-
+    <h1 id ="title">Etch-A-Sketch</h1>
+    <div id = "reset">
+         <button id = "button">Adjust Size</button>
+    </div>
+    <div id = "body">
+        <div id="grid-container"></div>
     </div>
 
 
