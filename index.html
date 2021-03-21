@@ -42,8 +42,9 @@
 
         let button = document.getElementById("button");
         button.addEventListener('click', function () {
+            number = prompt("Please enter grid size less than 100", "16")
+            if (number <= 100){
             document.querySelectorAll('.grid-item').forEach(e => e.remove());
-            number = prompt("Please enter your desired workspace", "16")
             height = ((600 / number) - 2.67) + "px";
             console.log(height);
             width = ((600 / number) - 2.67) + "px";
@@ -51,10 +52,9 @@
             for (i = 0; i < (number * number); i++) {
                 console.log(number);
             createDiv();
+            }
         }
-            
-        
-
+            else {alert("that number is too big")}
         })
 
 
